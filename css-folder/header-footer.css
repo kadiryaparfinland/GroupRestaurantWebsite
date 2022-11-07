@@ -55,11 +55,54 @@ nav img{
     top: 50%;
 }
 
+#check{
+        display: none;
+
+    }
+label #btn, label #cancel{
+        display: none;
+    }
+
 @media only screen and (max-width: 768px) {
 
-    .header-and-content{
-        display: flex;
-        flex-direction: row;
+    label #btn, label #cancel{
+        position: absolute;
+        cursor: pointer;
+        background: #25316D;
+        border-radius: 3px;
+    }
+
+    label #btn{
+        display: inline;
+        left: 5px;
+        top: 5px;
+        font-size: 35px;
+        color: white;
+        padding: 6px 12px;
+    }
+
+    label #cancel{
+        display: inline;
+        z-index: 1111;
+        left: 250px;
+        top: 20px;
+        font-size: 30px;
+        color: white;
+        padding: 4px 9px;
+
+    }
+
+    #check:checked ~ nav{
+        display: none;
+        transition: all 2s ease;
+    }
+    #check:checked ~ label #btn{
+        left: 5px;
+    }
+  #check:checked ~ label #cancel{
+        left: 250px;
+        opacity: 0;
+        pointer-events: none;
     }
 
     nav{
@@ -67,7 +110,9 @@ nav img{
         flex-direction: column;
         position: fixed;
         left: 0;
-        width: 150px;
+        width: 200px;
+        height: 80%;
+        
         
     }
     nav img{
@@ -88,4 +133,35 @@ nav img{
     margin-top: 10px;
 }
     
+}
+
+@media only screen and (max-width: 425px) {
+
+    nav img{
+    width: 120px;
+}
+
+     label #cancel{
+        top: 10px;
+        left: 165px;
+        font-size: 25px;
+    }
+
+     label #btn{
+        font-size: 25px;
+        padding: 4px 8px;
+    }
+
+    nav{
+        width: 150px; 
+    }
+
+     nav img{
+        margin-left: 0px;
+    }
+
+    .nav-links{
+        margin-top: 0px;
+        text-align: left;
+    }
 }
