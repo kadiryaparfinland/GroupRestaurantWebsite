@@ -1,4 +1,10 @@
+
+
 nav{
+    width: 100%;
+    z-index: 999;
+    top: 0;
+    position: fixed;
     font-family: 'Courier New', Courier, monospace;
     display: flex;
     padding: 2% 6%;
