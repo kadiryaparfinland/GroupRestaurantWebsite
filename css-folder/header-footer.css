@@ -1,4 +1,10 @@
+
+
 nav{
+    width: 100%;
+    z-index: 999;
+    top: 0;
+    position: fixed;
     font-family: 'Courier New', Courier, monospace;
     display: flex;
     padding: 2% 6%;
@@ -41,7 +47,7 @@ nav img{
 
 
 .footer{
-    position: fixed;
+    position: relative;
     left: 0;
      bottom: 0;
      width: 100%;
@@ -73,6 +79,7 @@ label #btn, label #cancel{
     }
 
     label #btn{
+        z-index: 999;
         display: inline;
         left: 5px;
         top: 5px;
