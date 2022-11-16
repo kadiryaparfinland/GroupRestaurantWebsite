@@ -98,3 +98,9 @@
     from {opacity: .4;}
     to {opacity: 1;}
 }
+
+@media only screen and (max-width: 768px) {
+    .content {
+     margin-top:0;
+}
+}

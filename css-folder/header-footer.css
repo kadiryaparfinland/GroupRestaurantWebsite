@@ -79,6 +79,7 @@ label #btn, label #cancel{
     }
 
     label #btn{
+        z-index: 999;
         display: inline;
         left: 5px;
         top: 5px;
