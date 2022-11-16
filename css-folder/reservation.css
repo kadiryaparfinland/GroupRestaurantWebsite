@@ -1,0 +1,109 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+h1 {
+    font-size: 3.2rem;
+    color: #25316d; 
+    font-weight: bold;
+    margin: 1rem;
+    margin-block-end: 3rem;
+}
+h2 {
+    font-size: 2.4rem;
+    color: #25316d; 
+    /* color: #25316d;  */
+    font-weight: bold;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+h3 {
+    font-size: 1.17rem;
+}
+
+p {
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.select {
+    background-color: white;
+}
+
+#container {
+    margin-block-start: 70px; 
+}
+
+#container, #yhteyssection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#container > * , #yhteyssection > *{
+    text-align: center;
+}
+
+#yhteyssection, #varaussection, #ekaLomake{
+    background-color: lightgrey; 
+    padding: 1rem;
+    border-radius: 5px;
+    width: 80%;
+    margin-block-end: 2rem;
+}
+
+
+input {
+   box-sizing: border-box;
+    width: 80%;
+    padding: 1rem;
+    margin-block-end: 1rem;
+    /* border: #25316d solid 2px;  */
+    border: 2px solid #25316d; 
+    border-radius: 5px;
+}
+
+#datelabel, #timelabel, #peoplelabel  {
+    float: left;
+    margin-inline-start: 10%;
+    font-weight: 700;
+}
+
+#rules {
+    padding: 2.0rem;
+}
+
+#varausnappi, #vahvistusnappi {
+    margin: 1rem;
+    color: black;
+}
+
+button {
+    padding: 1rem;
+    /* border: #25316d solid 2px; */
+    border: 2px solid #25316d; 
+    border-radius: 5px;
+    margin-block-end: 1rem;
+    cursor: pointer;
+} 
+
+i.fa-regular.fa-calendar-days,
+i.fa-regular.fa-clock,
+i.fa-solid.fa-person {
+    float: left;
+    margin-inline-start: 10%;
+    padding-inline-end: 1rem;
+}
+
+
+
+
