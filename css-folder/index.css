@@ -1,5 +1,7 @@
 .content {
      margin-top: 120px;
+
+    font-family: 'Courier New', Courier, monospace;
 }
 
 * {box-sizing: border-box}
@@ -99,8 +101,84 @@
     to {opacity: 1;}
 }
 
+.food-photo-and-text{
+    margin: 20px;
+}
+
+.food-list{
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    justify-content: center;
+}
+.menu-image{
+    width: 200px;
+}
+
+h1{
+    text-align: center;
+    font-size: xx-large;
+}
+
+h3{
+    margin-top: 10px;
+    text-align: center;
+    font-size: medium;
+}
+
+.featured-menu{
+    margin-top: 40px;
+
+}
+
+.opening-hours{
+    height: 500px;
+    margin-top: 60px;
+}
+
 @media only screen and (max-width: 768px) {
     .content {
      margin-top:0;
+    }
+  
+    .food-list{
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .opening-hours{
+        height: 300px;
+        margin-top: 40px;
+    }
+
+        .menu-image{
+        width: 250px;
+    }
+    h3{
+    font-size: medium;
+    }
+    h1{
+            font-size: medium;
+            font-weight: bold;
+        }
+}
+
+@media only screen and (max-width: 425px) {
+    h1{
+        font-size: small;
+        font-weight: bold;
+    }
+      .opening-hours{
+    height: 250px;
+    margin-top: 30px;
+}
+.menu-image{
+    width: 200px;
+}
+  h3{
+    font-size: small;
 }
 }
