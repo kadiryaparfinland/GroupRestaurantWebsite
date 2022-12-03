@@ -6,17 +6,41 @@ body {
     font-size: 1.6rem;
     font-family: 'Courier New', Courier, monospace;
 }
+ #backgroundphoto {
+    padding: 5rem;
+    background-image: url(../img-folder/reservation-heading2.jpeg);
+    background-position: center center;
+    background-size: cover;
+    overflow-x: hidden;
+    margin-block-end: 2rem;
+} 
+#backgroundphototext {
+    color: white;
+    font-size: 2.0rem;
+    padding: 1rem;
+    /* font-weight: 600; */
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+}
+.content {
+    margin-top: 80px;
+}
 
 h1 {
     font-size: 3.2rem;
     color: #25316d; 
     font-weight: bold;
     margin: 1rem;
-    margin-block-end: 3rem;
+    margin-block-end: 2rem;
+    text-align: center;
 }
-#reservationheadline, 
+
+h2,
 #customerdetailsheadline,
-#contactheadline {
+#contactheadline,
+#reservationheadline,
+#completereservationheadline {
     text-align: center;
     font-size: 2.4rem;
     color: #25316d; 
@@ -26,8 +50,18 @@ h1 {
     margin: 1rem;
 }
 
-#reservationform, 
-#contactform,
+h3,
+#customerdetailsheadline {
+    text-align: center;
+    font-size: 1.872rem;
+    color: #25316d; 
+    /* color: #25316d;  */
+    font-weight: bold;
+    padding: 1rem;
+    margin: 1rem;
+}
+ 
+
 #rules, 
 #contactsection,
 #customersection {
@@ -40,26 +74,36 @@ h1 {
     margin-block-end: 2rem;
 }
 
+#reservationform{
+    display: flex;
+    flex-direction: column;
+    background-color: lightgrey;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-inline: 10%;
+    margin-block-end: 2rem;
+}
+
 #datelabel, #timelabel, #peoplelabel {
     font-weight: 700;
     float: left;
     margin-inline: 10%;
 }
-
-#dateinput, select#timelist, #peopleinput,
-#firstname, #lastname, #email, #phonenumber {
+#dateinput, select#timelist, #peopleinput, #firstname, #lastname, #email, #phonenumber {
     box-sizing: border-box;
     width: 80%;
     padding: 1rem;
     margin-block-end: 1.5rem;
-    border: 2px solid #25316d; 
+    border: 2px solid #25316d;
     border-radius: 5px;
     margin-inline: 10%;
 }
 
-
 #reservationbutton,
-#confirmbutton {
+#confirmbutton,
+#changebutton,
+#cancelbutton,
+#contactrestaurantbutton {
     padding: 0.5rem;
     border-radius: 7px;
     cursor: pointer;
@@ -70,6 +114,8 @@ h1 {
     font-size: 16px;
     margin-inline-start: 30%; 
     letter-spacing: 2px;
+    margin-block-end: 1rem;
+    font-size: 1.3rem;
 }
 
 #rules
@@ -89,13 +135,15 @@ i.fa-solid.fa-person {
     padding: 0.5rem;
 }
 
-
-
-
+/********* mediaquery ************/
 
 @media only screen and (min-width: 427px) {
     #reservationheadline {
         margin-inline-start: left;
+    }
+    #backgroundphototext {
+        font-size: 2.4rem;
+        letter-spacing: 15px;
     }
 }
 
@@ -103,12 +151,15 @@ i.fa-solid.fa-person {
     .content {
         margin-top: 120px;
     }
+    #backgroundphototext {
+        font-size: 3.2rem;
+        letter-spacing: 30px;
+    }
     #reservationform {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
     }
-    
     #reservationform > * {
         flex-grow: 2;
         flex-basis: 0;
@@ -121,13 +172,6 @@ i.fa-solid.fa-person {
     #timewrapper {
         flex-grow: 3;
     } 
-    #reservationbutton {
-            border: 2px solid #25316d;
-            border-radius: 5px;
-            margin-block: 1.5rem;
-            margin-inline: 8rem;
-            cursor: pointer;     
-    }
     #timeinput {
         padding: 0.85rem;
     }
@@ -141,7 +185,6 @@ i.fa-solid.fa-person {
         grid-column-end: 4;
         text-align: left;
     }
-   
     #reservationdate {
         grid-column-start: 1;
         grid-column-end: 2;
@@ -154,14 +197,34 @@ i.fa-solid.fa-person {
         grid-column-start: 3;
         grid-column-end: 4;
     } 
-    #muutosNapitWrapper {
-        width: 82%;
+    #changebuttonswrapper {   
         display: flex;
-       flex-direction: row;
-       gap: 5%;
+        flex-direction: row;
+        gap: 5%;
+        margin-inline: 10%;
     }
-    #muutosNapitWrapper > * {
-       
+    #changebuttonswrapper > * {  
+        flex-basis: 100%;
+    }
+    #changebutton, #cancelbutton, #contactrestaurantbutton {
+        padding: 0.5rem;
+        border-radius: 7px;
+        cursor: pointer;
+        width: 35%;
+        margin-inline: 0;
+        background-color: #25316d;
+        color: white;
+        font-size: 16px;
+        letter-spacing: 2px;
+        margin-block-end: 1rem;
+        font-size: 1.3rem;
+    }
+
+
+    #reservationbutton {
+        margin-inline-start: 5%;
+        margin-block: 2rem;
+        margin-inline-end: 5%;
     }
 
 }
