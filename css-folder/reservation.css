@@ -5,7 +5,6 @@ html {
 body {
     font-size: 1.6rem;
     font-family: 'Courier New', Courier, monospace;
-    
 }
 
 h1 {
@@ -15,7 +14,10 @@ h1 {
     margin: 1rem;
     margin-block-end: 3rem;
 }
-h2 {
+#reservationheadline, 
+#customerdetailsheadline,
+#contactheadline {
+    text-align: center;
     font-size: 2.4rem;
     color: #25316d; 
     /* color: #25316d;  */
@@ -24,77 +26,56 @@ h2 {
     margin: 1rem;
 }
 
-h3 {
-    font-size: 1.17rem;
-}
-
-p {
-    padding: 0.5rem;
-    text-align: left;
-}
-
-.select {
-    background-color: white;
-}
-
-#container {
-    margin-block-start: 70px; 
-}
-
-#container, #yhteyssection {
+#reservationform, 
+#contactform,
+#rules, 
+#contactsection,
+#customersection {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-}
-
-#container > * , #yhteyssection > *{
-    text-align: center;
-}
-
-#yhteyssection, #varaussection, #ekaLomake{
     background-color: lightgrey; 
     padding: 1rem;
     border-radius: 5px;
-    width: 80%;
+    margin-inline: 10%; 
     margin-block-end: 2rem;
 }
 
+#datelabel, #timelabel, #peoplelabel {
+    font-weight: 700;
+    float: left;
+    margin-inline: 10%;
+}
 
-input {
-   box-sizing: border-box;
+#dateinput, select#timelist, #peopleinput,
+#firstname, #lastname, #email, #phonenumber {
+    box-sizing: border-box;
     width: 80%;
     padding: 1rem;
-    margin-block-end: 1rem;
-    /* border: #25316d solid 2px;  */
+    margin-block-end: 1.5rem;
     border: 2px solid #25316d; 
     border-radius: 5px;
+    margin-inline: 10%;
 }
 
-#datelabel, #timelabel, #peoplelabel  {
-    float: left;
-    margin-inline-start: 10%;
-    font-weight: 700;
+
+#reservationbutton,
+#confirmbutton {
+    padding: 0.5rem;
+    border-radius: 7px;
+    cursor: pointer;
+    width: 35%;
+    align-items: center;
+    background-color: #25316d;
+    color: white;
+    font-size: 16px;
+    margin-inline-start: 30%; 
+    letter-spacing: 2px;
 }
 
-#rules {
+#rules
+ {
     padding: 2.0rem;
 }
-
-#varausnappi, #vahvistusnappi {
-    margin: 1rem;
-    color: black;
-}
-
-button {
-    padding: 1rem;
-    /* border: #25316d solid 2px; */
-    border: 2px solid #25316d; 
-    border-radius: 5px;
-    margin-block-end: 1rem;
-    cursor: pointer;
-} 
 
 i.fa-regular.fa-calendar-days,
 i.fa-regular.fa-clock,
@@ -104,10 +85,83 @@ i.fa-solid.fa-person {
     padding-inline-end: 1rem;
 }
 
-.content {
-    margin-top: 120px;
+.icons {
+    padding: 0.5rem;
 }
 
 
 
 
+
+@media only screen and (min-width: 427px) {
+    #reservationheadline {
+        margin-inline-start: left;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .content {
+        margin-top: 120px;
+    }
+    #reservationform {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    
+    #reservationform > * {
+        flex-grow: 2;
+        flex-basis: 0;
+        box-sizing: unset;
+        width: 0%;
+    } 
+    #datewrapper {
+        flex-grow: 4;
+    }
+    #timewrapper {
+        flex-grow: 3;
+    } 
+    #reservationbutton {
+            border: 2px solid #25316d;
+            border-radius: 5px;
+            margin-block: 1.5rem;
+            margin-inline: 8rem;
+            cursor: pointer;     
+    }
+    #timeinput {
+        padding: 0.85rem;
+    }
+    #customersection {
+        display: grid;
+        justify-content: left; 
+        grid-template-columns: 200px 150px 100px;
+    }
+    #customerdetailsheadline {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        text-align: left;
+    }
+   
+    #reservationdate {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    #reservationtime {
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    #reservationpeople {
+        grid-column-start: 3;
+        grid-column-end: 4;
+    } 
+    #muutosNapitWrapper {
+        width: 82%;
+        display: flex;
+       flex-direction: row;
+       gap: 5%;
+    }
+    #muutosNapitWrapper > * {
+       
+    }
+
+}
