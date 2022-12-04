@@ -322,6 +322,7 @@ function cancelReservation() {
     document.getElementById('customersection').style.display = 'none';
     document.getElementById('changebutton').style.display = 'none';
     document.getElementById('cancelbutton').style.display = 'none';
+    document.getElementById('changes').style.display = 'none';
     
 }
 
