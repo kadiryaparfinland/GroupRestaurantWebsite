@@ -19,6 +19,10 @@ function reservationPage() {
     const peopleWrapper = document.createElement('p');
     const reservationButton = document.createElement('button');
     const rules = document.createElement('p');
+    const rulesTextBegin = 'If you are booking a table for more than 10 people please ';
+    const contactLinkText = 'contact';
+    const rulesTextEnd = ' our restaurant.';
+ 
 
     // set attributes to reservationPage-variables
     backgroundPhoto.setAttribute('id','backgroundphoto');
@@ -101,10 +105,7 @@ function reservationPage() {
     // timeList.appendChild(option2);
     // timeList.appendChild(option2);
     // timeList.appendChild(option2);
-
-
     reservationButton.textContent='Reserve';
-    rules.textContent = 'If you are booking a table for more than 10 people please <a href="./contact.html">contact</a> our restaurant.';
 
     //Add variables to reservationcontainer in main
         reservationContainer.appendChild(backgroundPhoto);
@@ -112,6 +113,10 @@ function reservationPage() {
         reservationContainer.appendChild(reservationHeadline);
         reservationContainer.appendChild(reservationForm);
         reservationContainer.appendChild(rules);
+
+    result = rulesTextBegin + "<a href='./contact.html'>" + contactLinkText + "</a>" + rulesTextEnd;
+    document.getElementById("rules").innerHTML = result;
+      
 
     // Events on reservationPage
         dateInput.addEventListener('click',checkDate);
@@ -213,7 +218,7 @@ function customerDetails() {
     email.setAttribute('placeholder', 'E-mail');
     phoneNumber.setAttribute('type', 'tel');
     phoneNumber.setAttribute('id', 'phonenumber');
-    phoneNumber.setAttribute('placeholder', 'Cellphone Number');
+    phoneNumber.setAttribute('placeholder', 'Phone Number');
     confirmButton.setAttribute('id', 'confirmbutton');
     confirmButton.appendChild(confirmButtonText);
     

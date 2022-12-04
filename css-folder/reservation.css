@@ -61,14 +61,20 @@ h3,
     margin: 1rem;
 }
  
-
-#rules, 
 #contactsection,
 #customersection,
 #changes
 {
     display: flex;
     flex-direction: column;
+    background-color: lightgrey; 
+    padding: 1rem;
+    border-radius: 5px;
+    margin-inline: 10%; 
+    margin-block-end: 2rem;
+}
+
+#rules {
     background-color: lightgrey; 
     padding: 1rem;
     border-radius: 5px;
