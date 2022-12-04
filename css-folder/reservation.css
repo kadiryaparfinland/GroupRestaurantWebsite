@@ -64,7 +64,9 @@ h3,
 
 #rules, 
 #contactsection,
-#customersection {
+#customersection,
+#changes
+{
     display: flex;
     flex-direction: column;
     background-color: lightgrey; 

@@ -76,7 +76,7 @@ function reservationPage() {
     dateLabel.textContent = 'Select Date';
     timeLabel.textContent = 'Time';
     peopleLabel.textContent = 'People';
-    reservationForm.appendChild(reservationHeadline);
+    //reservationForm.appendChild(reservationHeadline);
     reservationForm.appendChild(dateWrapper);
     reservationForm.appendChild(timeWrapper);
     reservationForm.appendChild(peopleWrapper);
@@ -261,11 +261,9 @@ function checkDate() {
     today = yyyy+'-'+mm+'-'+dd;
     document.getElementById("dateinput").setAttribute("min", today);
 }
-
-
    
 function done() {
-    document.getElementById('completereservationheadline').textContent = 'Your booking is confirmed';
+    document.getElementById('completereservationheadline').textContent = 'Your booking is now confirmed';
     document.getElementById('contactform').style.display = 'none';
     document.getElementById('confirmbutton').style.display = 'none';
     document.getElementById('contactsection').style.display = 'none';
@@ -274,11 +272,14 @@ function done() {
     const changeButton = document.createElement('button');
     const cancelButton = document.createElement('button');
     const contactRestaurantButton = document.createElement('button');
+    const changes = document.createElement('p');
+    const changesText = document.createTextNode('Amendments can be made via the confirmation email that has been sent to you.');
 
     changeButtonsWrapper.setAttribute('id','changebuttonswrapper');
     changeButton.setAttribute('id','changebutton');
     cancelButton.setAttribute('id', 'cancelbutton');
     contactRestaurantButton.setAttribute('id','contactrestaurantbutton');
+    changes.setAttribute('id','changes');
     
     changeButton.textContent = 'change reservation';
     cancelButton.textContent = 'cancel reservation';
@@ -288,21 +289,27 @@ function done() {
     changeButtonsWrapper.appendChild(changeButton);
     changeButtonsWrapper.appendChild(cancelButton);
     changeButtonsWrapper.appendChild(contactRestaurantButton);
-    // reservationContainer.appendChild(changeButton);
-    // reservationContainer.appendChild(cancelButton);
-    // reservationContainer.appendChild(contactRestaurantButton);
-    changeButton.addEventListener('click',changeReservation);
+    changes.appendChild(changesText);
+    reservationContainer.appendChild(changes);
     cancelButton.addEventListener('click',cancelReservation);
     contactRestaurantButton.addEventListener('click', openContactPage);
+
+    changeButton.style.display = 'none';
 }
 
 function changeReservation() {
-    document.getElementById('completereservationheadline').textContent = 'Change your reservation';
     document.getElementById('customersection').style.display = 'none';
     document.getElementById('changebutton').style.display = 'none';
     document.getElementById('cancelbutton').style.display = 'none';
     document.getElementById('contactrestaurantbutton').style.display = 'none';
     document.getElementById('reservationheadline').style.display = 'none';
+    document.getElementById('backgroundphoto').style.display = 'none';
+    document.getElementById('completereservationheadline').style.display = 'none';  
+
+    
+    //document.getElementById('reservationheadline').style.display = 'none';
+    reservationHeadline.textContent = "Change your reservation";
+    reservationButton.addEventListener('click', openContactPage2);
 }
 
 function cancelReservation() {
@@ -310,8 +317,13 @@ function cancelReservation() {
     document.getElementById('customersection').style.display = 'none';
     document.getElementById('changebutton').style.display = 'none';
     document.getElementById('cancelbutton').style.display = 'none';
+    
 }
 
 function openContactPage() {
     window.open('./contact.html');
+}
+
+function openContactPage2() {
+    window.alert('nappi toimii');
 }
