@@ -310,8 +310,6 @@ function changeReservation() {
     document.getElementById('reservationheadline').style.display = 'none';
     document.getElementById('backgroundphoto').style.display = 'none';
     document.getElementById('completereservationheadline').style.display = 'none';  
-
-    
     //document.getElementById('reservationheadline').style.display = 'none';
     reservationHeadline.textContent = "Change your reservation";
     reservationButton.addEventListener('click', openContactPage2);
@@ -323,7 +321,6 @@ function cancelReservation() {
     document.getElementById('changebutton').style.display = 'none';
     document.getElementById('cancelbutton').style.display = 'none';
     document.getElementById('changes').style.display = 'none';
-    
 }
 
 function openContactPage() {

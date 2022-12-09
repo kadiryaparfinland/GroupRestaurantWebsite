@@ -11,7 +11,7 @@ body {
     padding: 0;
 }
 .content {
-    margin-top: 120px;
+    margin-top: 0px;
 }
 .wrapper {
     display: flex;
@@ -167,9 +167,14 @@ td {
 }
 /* Small Screens */
 @media only screen and (max-width: 759px){
+    .content {
+        margin-top: -1.5rem;
+    }
+
     .map {
         display: none;
     }
+
 }
 /* Medium Screens */
 @media only screen and (min-width: 760px){
@@ -189,6 +194,10 @@ td {
 }
 /* Large Screens */
 @media only screen and (min-width:1024px){
+    .content {
+        margin-top: 120px;
+    }
+
     .background {
         padding: 12rem;
     }
