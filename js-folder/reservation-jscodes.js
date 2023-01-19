@@ -127,6 +127,7 @@ function validateForm() {
     const date = document.getElementById('dateinput').value;
     const time = document.getElementById('timelist').value;
     const people = document.getElementById('peopleinput').value;
+ 
 
     if (date == "") {
       alert("Date must be filled out");
@@ -210,17 +211,21 @@ function customerDetails() {
     firstnameInput.setAttribute('type', 'text');
     firstnameInput.setAttribute('id', 'firstname');
     firstnameInput.setAttribute('placeholder', 'First Name');
+ 
     lastnameInput.setAttribute('type', 'text');
     lastnameInput.setAttribute('id', 'lastname');
     lastnameInput.setAttribute('placeholder', 'Last Name');
     email.setAttribute('type', 'email');
     email.setAttribute('id', 'email');
     email.setAttribute('placeholder', 'E-mail');
+   
+    
     phoneNumber.setAttribute('type', 'tel');
     phoneNumber.setAttribute('id', 'phonenumber');
-    phoneNumber.setAttribute('placeholder', 'Phone Number');
+    phoneNumber.setAttribute('placeholder', '+35812345678');
     confirmButton.setAttribute('id', 'confirmbutton');
     confirmButton.appendChild(confirmButtonText);
+
     
     //add elements
     reservationContainer.appendChild(completeReservationHeadLine);
@@ -247,8 +252,66 @@ function customerDetails() {
     contactForm.appendChild(phoneNumber); 
     reservationContainer.appendChild(confirmButton);
 
-    confirmButton.addEventListener('click', done);
+    //events on confirmation page
+  
+    confirmButton.addEventListener('click', validateReservationform);
+    // confirmButton.addEventListener('click', checkName(firstname));
     
+}
+
+function validateReservationform() {
+    const firstname = document.getElementById('firstname').value;
+    const lastname = document.getElementById('lastname').value;
+    const email = document.getElementById('email').value;
+    const phonenumber = document.getElementById('phonenumber').value;
+    const nameRex = /^(?=.{1,50}$)[a-zåäö\s]+$/i;
+    const emailRex = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+    const phoneRex = /^\+358[0-9]{4,10}/;
+
+    if (firstname == '') {
+        alert('First name is missing!');
+        return false;
+    }
+    if (lastname == '') {
+        alert('Last name is missing!');
+        return false;
+    }
+
+    if (email == '') {
+        alert('Email address is missing!');
+        return false;
+    }
+
+    if (phonenumber == '') {
+        alert('Phonenumber is missing!');
+        return false;
+    }
+
+    if (!(nameRex.test(firstname))) {
+        alert('First name should contain only letters and max 50 characters');
+        return false;
+    }
+
+    if (!(nameRex.test(lastname))) {
+        alert('Last name should contain only letters and max 50 characters');
+        return false;
+    }
+
+    if (!(emailRex.test(email))) {
+        alert('Give a valid email address!');
+        return false;
+    }
+
+    if (!(phoneRex.test(phonenumber))) {
+        alert('Your phonenumber should be in format +3581234567');
+        return false;
+    }
+
+
+   
+
+
+    done();
 }
 
 
@@ -265,6 +328,11 @@ function checkDate() {
         } 
     today = yyyy+'-'+mm+'-'+dd;
     document.getElementById("dateinput").setAttribute("min", today);
+}
+
+function checkName(str) {
+    const nameRex = /^D+$/;
+    return nameRex.test(str);
 }
    
 function done() {
